@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostStatus extends Model
 {
-    //
+    public $table = "post_status";
 }
