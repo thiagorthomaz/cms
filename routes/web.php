@@ -16,4 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('postStatus', 'PostStatusController@list');
+Route::get('postStatus', 'PostStatusController@show');
+
+
+Route::get('user', 'AuthorController@insert');
+
+Route::get('post', 'PostStatusController@show');
+Route::get('postInsert', 'PostController@insert');
+Route::put('postPut', 'PostController@update');
+Route::delete('postDelete/{id}', 'PostController@delete');

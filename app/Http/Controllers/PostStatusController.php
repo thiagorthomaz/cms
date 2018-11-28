@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 class PostStatusController extends Controller
 {
     
-    public function list() {
+    public function show() {
         
         $posts_status = PostStatus::all();
 
         return response()->json($posts_status);
         
     }
-
+    
 
 }
