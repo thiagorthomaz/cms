@@ -20,6 +20,12 @@ namespace CMS.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Midia> Midias { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Post> Post { get; set; }
+        public DbSet<PostStatus> PostStatus { get; set; }
+        public DbSet<User> User { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

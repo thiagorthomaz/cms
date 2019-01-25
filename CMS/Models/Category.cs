@@ -12,7 +12,14 @@ namespace CMS.Models
 
         [Required]
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime DeletedAt { get; set; }
+
+        public DateTime? UpdatedAt { get; set; }
+        
+        public DateTime? DeletedAt { get; set; }
+
+        [Required(ErrorMessage = "Description must be informed")]
+        public string Description { get; set; }
+        [Required(ErrorMessage = "Slug must be informed")]
+        public string Slug { get; set; }
     }
 }

@@ -205,6 +205,26 @@
     <Compile Include="Migrations\201901251345493_CreateDatabase.Designer.cs">
       <DependentUpon>201901251345493_CreateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901251453264_CreateInitialTables.cs" />
+    <Compile Include="Migrations\201901251453264_CreateInitialTables.Designer.cs">
+      <DependentUpon>201901251453264_CreateInitialTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901251453535_PopulatePostStatus.cs" />
+    <Compile Include="Migrations\201901251453535_PopulatePostStatus.Designer.cs">
+      <DependentUpon>201901251453535_PopulatePostStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901251505008_AddFieldsToCategory.cs" />
+    <Compile Include="Migrations\201901251505008_AddFieldsToCategory.Designer.cs">
+      <DependentUpon>201901251505008_AddFieldsToCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901251512102_NullableFieldsInCategory.cs" />
+    <Compile Include="Migrations\201901251512102_NullableFieldsInCategory.Designer.cs">
+      <DependentUpon>201901251512102_NullableFieldsInCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901251513394_PopulateCategory.cs" />
+    <Compile Include="Migrations\201901251513394_PopulateCategory.Designer.cs">
+      <DependentUpon>201901251513394_PopulateCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -292,6 +312,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901251345493_CreateDatabase.resx">
       <DependentUpon>201901251345493_CreateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901251453264_CreateInitialTables.resx">
+      <DependentUpon>201901251453264_CreateInitialTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901251453535_PopulatePostStatus.resx">
+      <DependentUpon>201901251453535_PopulatePostStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901251505008_AddFieldsToCategory.resx">
+      <DependentUpon>201901251505008_AddFieldsToCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901251512102_NullableFieldsInCategory.resx">
+      <DependentUpon>201901251512102_NullableFieldsInCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901251513394_PopulateCategory.resx">
+      <DependentUpon>201901251513394_PopulateCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
