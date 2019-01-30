@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201901251513394_PopulateCategory.Designer.cs">
       <DependentUpon>201901251513394_PopulateCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901301818345_UpdatePostFields.cs" />
+    <Compile Include="Migrations\201901301818345_UpdatePostFields.Designer.cs">
+      <DependentUpon>201901301818345_UpdatePostFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -327,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901251513394_PopulateCategory.resx">
       <DependentUpon>201901251513394_PopulateCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901301818345_UpdatePostFields.resx">
+      <DependentUpon>201901301818345_UpdatePostFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
