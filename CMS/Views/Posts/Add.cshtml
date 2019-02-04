@@ -1,8 +1,47 @@
 ﻿
 @{
     ViewBag.Title = "Add";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Editor.cshtml";
 }
 
-<h2>Add</h2>
+<div class="editable">Teste</div>
 
+<button id="save" class="btn btn-primary">Save</button>
+
+
+<script>
+
+    //document.onload = function () {
+        var editor = new MediumEditor('.editable');
+
+        editor.subscribe('editableInput', function (eventObj, editable) {
+
+            var content = editor.getContent(); // getContent() returns the content of the editor as well
+            console.log("content", content);
+
+        });
+
+    // }
+
+        $(document).on("click", "#save", function (e) {
+            
+            var _content = editor.serialize();
+            console.log("editor", editor.serialize());
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Content("~/API/Post")',
+                data: {
+                    Post: _content
+                },
+                success: function (retorno) {
+
+                    
+                }
+            });
+
+        });
+    
+
+
+</script>

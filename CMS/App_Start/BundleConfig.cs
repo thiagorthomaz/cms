@@ -30,10 +30,15 @@ namespace CMS
                       "~/admin-lte/js/adminlte.min.js"));
 
             bundles.Add(new StyleBundle("~/bundles/adminlte/css").Include(
-                      "~/admin-lte/css/AdminLTE.min.css",
+                      "~//admin-lte/css/AdminLTE.min.css",
                       "~/admin-lte/css/skins/skin-blue.min.css"));
 
+            bundles.Add(new StyleBundle("~/bundles/mediumeditor/css").Include(
+                      "~/Content/mediumeditor/css/medium-editor.min.css",
+                      "~/Content/mediumeditor/css/themes/default.min.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/mediumeditor/js").Include(
+                      "~/Content/mediumeditor/js/medium-editor.js"));
         }
     }
 }

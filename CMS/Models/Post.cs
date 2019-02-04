@@ -12,8 +12,8 @@ namespace CMS.Models
 
         [Required]
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime DeletedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? DeletedAt { get; set; }
 
         [MaxLength(200)]
         [Required(ErrorMessage = "Post title must be informed")]
