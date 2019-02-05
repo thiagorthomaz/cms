@@ -4,9 +4,45 @@
     Layout = "~/Views/Shared/_Editor.cshtml";
 }
 
-<div class="editable">Teste</div>
 
-<button id="save" class="btn btn-primary">Save</button>
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Post</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="form-group">
+            <input class="form-control" id="postTitle" placeholder="Post Title">
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="postSummary" placeholder="Post Summary">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" id="postSEO" placeholder="Post SEO">
+        </div>
+
+        <div class="form-group">
+            
+            <div class="editable">Teste</div>
+
+        </div>
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <div class="pull-right">
+            <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button>
+            <button id="save" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+        </div>
+        <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button>
+    </div>
+    <!-- /.box-footer -->
+</div>
+
+
+
+
 
 
 <script>
@@ -25,14 +61,21 @@
 
         $(document).on("click", "#save", function (e) {
             
+            var postTitle = $("#postSEO").val();
+            var postSumary = $("#postSumary").val();
+            var postSEO = $("#postSEO").val();
+
             var _content = editor.serialize();
             console.log("editor", editor.serialize());
 
             $.ajax({
                 type: "POST",
-                url: '@Url.Content("~/API/Post")',
+                url: '@Url.Content("~/API/Posts")',
                 data: {
-                    Post: _content
+                    PostContent: _content,
+                    PostSEO: postSEO,
+                    PostSumary: postSumary,
+                    PostTitle: postTitle
                 },
                 success: function (retorno) {
 

@@ -12,8 +12,8 @@ namespace CMS.Models
 
         [Required]
         public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
+        public Nullable<DateTime> UpdatedAt { get; set; }
+        public Nullable<DateTime> DeletedAt { get; set; }
 
         [MaxLength(200)]
         [Required(ErrorMessage = "Post title must be informed")]
@@ -24,7 +24,7 @@ namespace CMS.Models
         public string PostContent { get; set; }
 
         [MaxLength(1000)]
-        public string PostSumary { get; set; }
+        public string PostSummary { get; set; }
 
         [MaxLength(500)]
         public string PostSEO { get; set; }

@@ -7,6 +7,9 @@
 
     @Styles.Render("~/Content/bootstrap.min.css")
 
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/font-awesome.min.css")
+    @Styles.Render("~/bundles/adminlte/css")
 
     @Styles.Render("~/bundles/mediumeditor/css")
     @Scripts.Render("~/bundles/mediumeditor/js")
@@ -15,10 +18,21 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/adminlte/js")
 
 </head>
 <body>
-    @RenderBody()
+    
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content container-fluid">
+            <!--------------------------
+              | Your Page Content Here |
+              -------------------------->
+            @RenderBody()
+        </section>
+    </div>
 
 </body>
 </html>

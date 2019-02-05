@@ -45,7 +45,8 @@ namespace CMS.Controllers.API
             post.DeletedAt = null;
             post.UpdatedAt = null;
 
-            /*if (!ModelState.IsValid)
+            /*
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }*/
@@ -75,7 +76,7 @@ namespace CMS.Controllers.API
 
             postInDb.PostContent = post.PostContent;
             postInDb.PostSEO = post.PostSEO;
-            postInDb.PostSumary = post.PostSumary;
+            postInDb.PostSummary = post.PostSummary;
             postInDb.PostTitle = post.PostTitle;
             postInDb.UpdatedAt = DateTime.Now;
 

@@ -249,6 +249,14 @@
     <Compile Include="Migrations\201902041451471_UpdatedTimePostFields.Designer.cs">
       <DependentUpon>201902041451471_UpdatedTimePostFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902051805342_TestDataNullablePost.cs" />
+    <Compile Include="Migrations\201902051805342_TestDataNullablePost.Designer.cs">
+      <DependentUpon>201902051805342_TestDataNullablePost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902051941422_PostFixSummaryField.cs" />
+    <Compile Include="Migrations\201902051941422_PostFixSummaryField.Designer.cs">
+      <DependentUpon>201902051941422_PostFixSummaryField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -361,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902041451471_UpdatedTimePostFields.resx">
       <DependentUpon>201902041451471_UpdatedTimePostFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902051805342_TestDataNullablePost.resx">
+      <DependentUpon>201902051805342_TestDataNullablePost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902051941422_PostFixSummaryField.resx">
+      <DependentUpon>201902051941422_PostFixSummaryField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
