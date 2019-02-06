@@ -61,11 +61,11 @@ namespace CMS.Controllers.API
 
         [HttpPut]
         public IHttpActionResult UpdatePost(int id, Post post) {
-
+            /*
             if (!ModelState.IsValid)
             {
                 return BadRequest();
-            }
+            }*/
 
             Post postInDb = _context.Post.SingleOrDefault(p => p.Id == id);
 
@@ -80,6 +80,8 @@ namespace CMS.Controllers.API
             postInDb.PostTitle = post.PostTitle;
             postInDb.UpdatedAt = DateTime.Now;
 
+            
+            _context.Entry(postInDb).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
 
             return Created(new Uri(Request.RequestUri + "/" + postInDb.Id), postInDb);

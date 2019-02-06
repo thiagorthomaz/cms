@@ -1,9 +1,12 @@
-﻿
+﻿@model CMS.Models.Post
+
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Form Post";
     Layout = "~/Views/Shared/_Editor.cshtml";
 }
 
+
+<input type="hidden" class="form-control" id="postId" value="@Model.Id">
 
 <div class="box box-primary">
     <div class="box-header with-border">
@@ -12,19 +15,19 @@
     <!-- /.box-header -->
     <div class="box-body">
         <div class="form-group">
-            <input class="form-control" id="postTitle" placeholder="Post Title">
+            <input class="form-control" id="postTitle" placeholder="Post Title" value="@Model.PostTitle">
         </div>
         <div class="form-group">
-            <input class="form-control" id="postSummary" placeholder="Post Summary">
+            <input class="form-control" id="postSummary" placeholder="Post Summary" value="@Model.PostSummary">
         </div>
 
         <div class="form-group">
-            <input class="form-control" id="postSEO" placeholder="Post SEO">
+            <input class="form-control" id="postSEO" placeholder="Post SEO"  value="@Model.PostSEO">
         </div>
 
         <div class="form-group">
             
-            <div class="editable">Teste</div>
+            <div class="editable">@Model.PostSummary</div>
 
         </div>
 
@@ -61,25 +64,34 @@
 
         $(document).on("click", "#save", function (e) {
             
+            var postId = $("#postId").val();
             var postTitle = $("#postSEO").val();
-            var postSumary = $("#postSumary").val();
+            var postSummary = $("#postSummary").val();
             var postSEO = $("#postSEO").val();
+            var _content = editor.getContent();
+            
+            var _request_type = "POST";
+            var _params = ""
 
-            var _content = editor.serialize();
-            console.log("editor", editor.serialize());
+            var _data = {
+                PostContent: _content,
+                PostSEO: postSEO,
+                PostSummary: postSummary,
+                PostTitle: postTitle
+            }
+
+            if (postId) {
+                var _request_type = "PUT";
+                _data.Id = postId;
+                _params = "/" + postId;
+            }
 
             $.ajax({
-                type: "POST",
-                url: '@Url.Content("~/API/Posts")',
-                data: {
-                    PostContent: _content,
-                    PostSEO: postSEO,
-                    PostSumary: postSumary,
-                    PostTitle: postTitle
-                },
+                type: _request_type,
+                url: '@Url.Content("~/API/Posts")' + _params,
+                data: _data,
                 success: function (retorno) {
-
-                    
+                    console.log(retorno);
                 }
             });
 
