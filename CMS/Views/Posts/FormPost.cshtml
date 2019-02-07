@@ -27,7 +27,7 @@
 
         <div class="form-group">
             
-            <div class="editable">@Model.PostSummary</div>
+            <div class="editable">@Html.Raw(Model.PostContent)</div>
 
         </div>
 
@@ -50,26 +50,23 @@
 
 <script>
 
-    //document.onload = function () {
         var editor = new MediumEditor('.editable');
 
         editor.subscribe('editableInput', function (eventObj, editable) {
 
             var content = editor.getContent(); // getContent() returns the content of the editor as well
-            console.log("content", content);
+            //console.log("content", content);
 
         });
 
-    // }
-
         $(document).on("click", "#save", function (e) {
-            
+
             var postId = $("#postId").val();
             var postTitle = $("#postSEO").val();
             var postSummary = $("#postSummary").val();
             var postSEO = $("#postSEO").val();
             var _content = editor.getContent();
-            
+
             var _request_type = "POST";
             var _params = ""
 
@@ -91,12 +88,12 @@
                 url: '@Url.Content("~/API/Posts")' + _params,
                 data: _data,
                 success: function (retorno) {
-                    console.log(retorno);
+                    window.location.href = '@Url.Content("~/Posts/Edit/")' + postId;
                 }
             });
 
         });
-    
+
 
 
 </script>
