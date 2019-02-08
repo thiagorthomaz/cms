@@ -20,7 +20,7 @@ namespace CMS.Controllers
         // GET: Posts
         public ActionResult Index()
         {
-            var posts = _context.Post.ToList();
+            var posts = _context.Post.Where(p => p.DeletedAt == null).ToList();
 
             return View(posts);
         }

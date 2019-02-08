@@ -34,7 +34,7 @@ namespace CMS.Controllers.API
         }
 
         public IHttpActionResult GetPosts() {
-            return Ok(_context.Post.ToList());
+            return Ok(_context.Post.Where(p => p.DeletedAt == null).ToList());
         }
 
 
