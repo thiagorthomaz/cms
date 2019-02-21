@@ -21,5 +21,9 @@ namespace CMS.Models
         public string Description { get; set; }
         [Required(ErrorMessage = "Slug must be informed")]
         public string Slug { get; set; }
+
+        [Required(ErrorMessage = "Name must be informed")]
+        public string Name { get; set; }
+
     }
 }

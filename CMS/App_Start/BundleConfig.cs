@@ -22,6 +22,9 @@ namespace CMS
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootbox").Include(
+                      "~/Scripts/bootbox.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
@@ -30,7 +33,7 @@ namespace CMS
                       "~/admin-lte/js/adminlte.min.js"));
 
             bundles.Add(new StyleBundle("~/bundles/adminlte/css").Include(
-                      "~//admin-lte/css/AdminLTE.min.css",
+                      "~/admin-lte/css/AdminLTE.min.css",
                       "~/admin-lte/css/skins/skin-blue.min.css"));
 
             bundles.Add(new StyleBundle("~/bundles/mediumeditor/css").Include(
@@ -39,6 +42,13 @@ namespace CMS
 
             bundles.Add(new ScriptBundle("~/bundles/mediumeditor/js").Include(
                       "~/Content/mediumeditor/js/medium-editor.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datatables/js").Include(
+                      "~/Content/datatables/datatables.min.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/datatables/css").Include(
+                      "~/Content/datatables/datatables.min.css"));
+
         }
     }
 }

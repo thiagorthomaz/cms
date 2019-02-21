@@ -209,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\CategoriesController.cs" />
     <Compile Include="Controllers\API\PostsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -256,6 +257,10 @@
     <Compile Include="Migrations\201902051941422_PostFixSummaryField.cs" />
     <Compile Include="Migrations\201902051941422_PostFixSummaryField.Designer.cs">
       <DependentUpon>201902051941422_PostFixSummaryField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902081904413_CategoryAddName.cs" />
+    <Compile Include="Migrations\201902081904413_CategoryAddName.Designer.cs">
+      <DependentUpon>201902081904413_CategoryAddName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -375,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902051941422_PostFixSummaryField.resx">
       <DependentUpon>201902051941422_PostFixSummaryField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902081904413_CategoryAddName.resx">
+      <DependentUpon>201902081904413_CategoryAddName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

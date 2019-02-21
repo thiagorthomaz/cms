@@ -14,6 +14,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @Styles.Render("~/Content/bootstrap.min.css")
     @Styles.Render("~/Content/font-awesome.min.css")
     @Styles.Render("~/bundles/adminlte/css")
+    @Styles.Render("~/bundles/datatables/css")
+
+
     
     
          
@@ -384,8 +387,12 @@ desired effect
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootbox")
+
     @Scripts.Render("~/bundles/adminlte/js")
+    @Scripts.Render("~/bundles/datatables/js")
     
+
     @RenderSection("scripts", required: false)
 
 </body>
