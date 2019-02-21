@@ -60,7 +60,7 @@ namespace CMS.Controllers.API
         }
 
         [HttpPut]
-        public IHttpActionResult UpdatePost(int id, Category category) {
+        public IHttpActionResult UpdateCategory(int id, Category category) {
             /*
             if (!ModelState.IsValid)
             {

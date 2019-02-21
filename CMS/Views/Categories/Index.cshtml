@@ -10,6 +10,10 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Create new category</h3>
             </div>
+
+            <input type="text" class="form-control" id="id" placeholder="">
+
+
             <div class="box-body">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -91,10 +95,15 @@
                     description : $("#description").val(),
                 }
 
+                var _method = "POST";
+                if ($("#id").val()) {
+                    _method = "PUT";
+                }
+
                 $.ajax({
-                    url: '/api/categories/',
-                    method: "POST",
-                    data : _data,
+                    url: '/api/categories/' + $("#id").val(),
+                    method: _method,
+                    data: _data,
                     success: function () {
                         console.log("success");
                     }
@@ -130,9 +139,7 @@
                 $("#name").val($(_tds[0]).text());
                 $("#description").val($(_tds[1]).text());
                 $("#slug").val($(_tds[2]).text());
-                
-
-
+                $("#id").val(button.attr("data-category-id"));
             });
 
 
