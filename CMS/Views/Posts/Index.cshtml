@@ -12,26 +12,11 @@
             <thead>
                 <tr>
                     <th>Title</th>
-                    <th>Author</th>
-                    <th>Categories</th>
                     <th>Data</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var post in Model)
-                {
-                    <tr>
-                        <td><b>@Html.ActionLink(@post.PostTitle, "Edit", "Posts", new { id = post.Id }, new { @class = "nav-link" })</b></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>@post.CreatedAt</td>
-                        <td>
-                            <button data-postID="@post.Id" class="btn-link js-delete">Delete</button>
-                        </td>
-                    </tr>
-
-                }
             </tbody>
 
         </table>
@@ -49,7 +34,29 @@
     <script>
 
         $(document).ready(function () {
-            $("#posts .js-delete").on("click", function () {
+
+            var table = $("#posts").DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: '@Url.Content("~/api/posts/")', dataSrc: ""
+                },
+                columns: [
+                    { data: "postTitle" },
+                    { data: "createdAt" },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            var _buttons = "<button class='btn-link js-delete' data-category-id=" + data + ">Delete</button>";
+                            _buttons += "<a href='/Posts/Edit/" + data + "'>Edit</a>";
+                            return _buttons;
+                        }
+                    }
+                ]
+            });
+
+
+            $("#posts").on("click", ".js-delete", function () {
                 var button = $(this);
                 if (confirm("Are you sure you want to delete this customers?")) {
                     $.ajax({
