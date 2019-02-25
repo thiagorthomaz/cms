@@ -47,7 +47,7 @@
                     {
                         data: "id",
                         render: function (data) {
-                            var _buttons = "<button class='btn-link js-delete' data-category-id=" + data + ">Delete</button>";
+                            var _buttons = "<button class='btn-link js-delete' data-post-id=" + data + ">Delete</button>";
                             _buttons += "<a href='/Posts/Edit/" + data + "'>Edit</a>";
                             return _buttons;
                         }
@@ -58,18 +58,23 @@
 
             $("#posts").on("click", ".js-delete", function () {
                 var button = $(this);
-                if (confirm("Are you sure you want to delete this customers?")) {
-                    $.ajax({
-                        url: '/api/posts/' + button.attr("data-postId"),
-                        method: "DELETE",
-                        success: function () {
-                            console.log("success");
-                            button.parents("tr").remove();
-                        }
-                    }).done(function () {
-                        console.log("success");
-                    });
-                }
+
+
+                bootbox.confirm("Are you sure you want to delete this post?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: '/api/posts/' + button.attr("data-post-id"),
+                            method: "DELETE",
+                            success: function () {
+                                console.log("success");
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        }).done(function () {
+                            bootbox.alert("Removed");
+                        });
+                    }
+                })
+
             });
         });
 
