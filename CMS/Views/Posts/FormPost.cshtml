@@ -69,6 +69,7 @@
 
             var _request_type = "POST";
             var _params = ""
+            
 
             var _data = {
                 PostContent: _content,
@@ -77,7 +78,7 @@
                 PostTitle: postTitle
             }
 
-            if (postId) {
+            if (postId && postId != 0) {
                 var _request_type = "PUT";
                 _data.Id = postId;
                 _params = "/" + postId;
@@ -88,7 +89,7 @@
                 url: '@Url.Content("~/API/Posts")' + _params,
                 data: _data,
                 success: function (retorno) {
-                    window.location.href = '@Url.Content("~/Posts/Edit/")' + postId;
+                    window.location.href = '@Url.Content("~/Posts/Edit/")' + retorno.id;
                 }
             });
 
